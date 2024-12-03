@@ -1,0 +1,5 @@
+{
+    "phpserver.rootPath": "${workspaceFolder}",
+    "phpserver.port": 8000,
+    "phpserver.phpPath": "C:\\xampp\\php\\php.exe" // Path to your PHP executable
+}

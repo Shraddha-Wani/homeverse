@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Houses</title>
+    <style>
+        /* Basic styling for layout */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .houses-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow houses to wrap onto next line */
+            gap: 20px; /* Space between houses */
+        }
+        .house {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: calc(33.33% - 20px); /* Adjust the width for 3 houses per row */
+            box-sizing: border-box; /* Include padding in width calculation */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .house img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        form {
+            margin-top: 20px;
+            display: none; /* Initially hide the form */
+        }
+        #successMessage {
+            padding: 10px;
+            background-color: #5cb85c;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Display successful message at the top -->
+    <div id="successMessage">
+        <strong>Success:</strong> Your purchase was successful!
+    </div>
+
+    <h1>Houses for Rent</h1>
+
+    <!-- Houses Container -->
+    <div class="houses-container">
+        <!-- House 1 -->
+        <div class="house">
+            <img src="house1.jpg" alt="House 1" height="300" width="500">
+            <h2>House 1</h2>
+            <p>Price: ₹ 50,000</p>
+            <button onclick="buyHouse('House 1', 50000)">Buy Now</button>
+           
+            <form id="purchaseForm1" style="display: none;">
+                <label for="name1">Name:</label>
+                <input type="text" id="name1" required>
+                <br>
+                <br>
+                <label for="email1">Email:</label>
+                <input type="email" id="email1" required>
+                <br>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="purchaseMsg1" style="display: none;"></p>
+        </div>
+
+        <!-- House 2 -->
+        <div class="house">
+            <img src="house2.jpg" alt="House 2" height="300" width="500">
+            <h2>House 2</h2>
+            <p>Price:  ₹ 30,000</p>
+            <button onclick="buyHouse('House 2', 30000)">Buy Now</button>
+            
+            <form id="purchaseForm2" style="display: none;">
+                <label for="name2">Name:</label>
+                <input type="text" id="name2" required>
+                <br>
+                <br>
+                <label for="email2">Email:</label>
+                <input type="email" id="email2" required>
+                <br>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="purchaseMsg2" style="display: none;"></p>
+        </div>
+
+        <!-- House 3 -->
+        <div class="house">
+            <img src="house3.jpg" alt="House 3" height="300" width="500">
+            <h2>House 3</h2>
+            <p>Price:  ₹ 50,000</p>
+            <button onclick="buyHouse('House 3', 50000)">Buy Now</button>
+            
+            <form id="purchaseForm3" style="display: none;">
+                <label for="name3">Name:</label>
+                <input type="text" id="name3" required>
+                <br>
+                <br>
+                <label for="email3">Email:</label>
+                <input type="email" id="email3" required>
+                <br>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="purchaseMsg3" style="display: none;"></p>
+        </div>
+
+        <!-- House 4 -->
+        <div class="house">
+            <img src="house4.jpg" alt="House 4" height="300" width="500">
+            <h2>House 4</h2>
+            <p>Price:  ₹ 40,000</p>
+            <button onclick="buyHouse('House 4', 40000)">Buy Now</button>
+            
+            <form id="purchaseForm4" style="display: none;">
+                <label for="name4">Name:</label>
+                <input type="text" id="name4" required>
+                <br>
+                <br>
+                <label for="email4">Email:</label>
+                <input type="email" id="email4" required>
+                <br>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="purchaseMsg4" style="display: none;"></p>
+        </div>
+
+        <!-- House 5 -->
+        <div class="house">
+            <img src="house5.jpg" alt="House 5" height="300" width="500">
+            <h2>House 5</h2>
+            <p>Price:  ₹ 30,000</p>
+            <button onclick="buyHouse('House 5', 30000)">Buy Now</button>
+            
+            <form id="purchaseForm5" style="display: none;">
+                <label for="name5">Name:</label>
+                <input type="text" id="name5" required>
+                <br>
+                <br>
+                <label for="email5">Email:</label>
+                <input type="email" id="email5" required>
+                <br>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="purchaseMsg5" style="display: none;"></p>
+        </div>
+
+        <!-- House 6 -->
+        <div class="house">
+            <img src="house6.jpg" alt="House 6" height="300" width="500">
+            <h2>House 6</h2>
+            <p>Price:  ₹ 30,000</p>
+            <button onclick="buyHouse('House 6', 30000)">Buy Now</button>
+            
+            <form id="purchaseForm6" style="display: none;">
+                <label for="name6">Name:</label>
+                <input type="text" id="name6" required>
+                <br>
+                <br>
+                <label for="email6">Email:</label>
+                <input type="email" id="email6" required>
+                <br>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="purchaseMsg6" style="display: none;"></p>
+        </div>
+    </div>
+
+    <!-- Display purchased house -->
+    <div id="confirmation" style="display: none;">
+        <h2>Thank you for your purchase!</h2>
+        <p id="purchaseDetails"></p>
+    </div>
+
+    <script>
+        // Function to handle house purchase
+        function buyHouse(houseName, price) {
+            // Simulate purchase logic (e.g., send data to server, update database, etc.)
+            // For demo purposes, we'll simply display a confirmation message
+            const confirmationDiv = document.getElementById('confirmation');
+            confirmationDiv.style.display = 'block';
+            document.getElementById('purchaseDetails').textContent = `You have purchased ${houseName} for $${price}.`;
+
+            // Show the purchase form for the specific house
+            const formId = `purchaseForm${houseName.split(' ')[1]}`; // Generate form ID dynamically
+            document.getElementById(formId).style.display = 'block';
+
+            // Display success message at the top
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+
+            // Hide the success message after a few seconds (e.g., 3 seconds)
+            setTimeout(function() {
+                successMessage.style.display = 'none';
+            }, 3000); // 3000 milliseconds = 3 seconds
+        }
+    </script>
+</body>
+</html>
